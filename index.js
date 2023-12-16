@@ -85,7 +85,7 @@ class Character {
   interact(onSuccess, onFail) {
     let question = `<p>The question is: ${this._task}</p>`;
     let input =
-      '<input type="text" id="useranswer" class="block w-full md:w-1/2 rounded-md border border-black py-1.5 px-10 outline-none mt-10"/>';
+      '<input type="text" id="useranswer" class="block w-full md:w-1/2 rounded-md border border-black py-1.5 px-10 outline-none"/>';
     let content = question + input;
     const interaction = document.getElementById("interaction");
     interaction.innerHTML = content;
