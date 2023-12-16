@@ -136,7 +136,7 @@ const Flat1 = new Flat({
 
 const Flat2 = new Flat({
   name: "Flat 2",
-  description: `a 3-bedroom flat with a backyard with no access to other flats. You looked around and haven't found a cat, but the ${Character2.name} told you that if you answer the question, they will tell you where they've seen him this morning.`,
+  description: `a 3-bedroom flat with a backyard with no access to other flats. You looked around and haven't found a cat, but the ${Character2.name} told you that if you solve the riddle, they will tell you where they've seen him this morning.`,
   character: Character2,
   permission:
     "Well done! <br>They saw Barney lying next to Flat 4 this morning.",
@@ -145,7 +145,7 @@ const Flat2 = new Flat({
 
 const Flat3 = new Flat({
   name: "Flat 3",
-  description: `a 1-bedroom flat. There is no cat or access to other flats. ${Character3.name} wasn't happy that you asked a question about a cat in front of his dog. So, in order to come back to Flat 1 and stay good neighbors with ${Character3.name}, you have to answer correctly to the question.`,
+  description: `a 1-bedroom flat. There is no cat or access to other flats. ${Character3.name} wasn't happy that you asked a question about a cat in front of his dog. So, in order to come back to Flat 1 and stay good neighbors with ${Character3.name}, you have to solve the riddle.`,
   character: Character3,
   permission: "Well done!",
   guidance: "To return to the Flat 1, enter - north",
@@ -163,12 +163,12 @@ const Flat5 = new Flat({
   name: "Flat 5",
   description: `a 3-bedroom flat with access to Flat 7. ${Character5.name} mentioned that there is no cat here, but he knows its whereabouts. However, you have to solve a challenging task. If you answer correctly, you'll discover where to find the cat.`,
   character: Character5,
-  permission: "Well done! <br>The owner told you that the cat in the Flat 7.",
+  permission: "Well done! <br>The owner told you that the cat is in Flat 7.",
   guidance: "In order to get to the Flat 7 enter - east",
 });
 const Flat6 = new Flat({
   name: "Flat 6",
-  description: `a 1 bedroom flat, with no cat and with excess to Flat 7. ${Character6.name} told you that the cat might be in the Flat 7 but if you answer correctly to his question he will tell you the answer to the task in Flat 7.`,
+  description: `a 1 bedroom flat, with no cat and with access to Flat 7. ${Character6.name} told you that the cat might be in the Flat 7 but if you answer correctly to his question he will tell you the answer to the task in Flat 7.`,
   character: Character6,
   permission: "Well done!",
   guidance: "Flat 7 - south",
