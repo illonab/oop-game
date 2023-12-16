@@ -85,7 +85,7 @@ class Character {
   interact(onSuccess, onFail) {
     let question = `<p>The question is: ${this._task}</p>`;
     let input =
-      '<input type="text" id="useranswer" style="display: block; width: 50%; border-radius: 0.375rem; border: 1px solid #000; padding: 0.375rem 2.5rem; outline: none; margin-top: 20px"/>';
+      '<input type="text" id="useranswer" class="block w-full md:w-1/2 rounded-md border border-black py-1.5 px-10 outline-none mt-10"/>';
     let content = question + input;
     const interaction = document.getElementById("interaction");
     interaction.innerHTML = content;
@@ -217,7 +217,7 @@ function displayFlatInfo(flat) {
         document.getElementById("usertext").focus();
         let textPermission = `
       <p>${flat.permission}</p>`;
-        let textGuidance = `<p style="font-weight: bold">${flat.guidance}</p>`;
+        let textGuidance = `<p class="font-bold"">${flat.guidance}</p>`;
 
         let content = textPermission + textGuidance;
         document.getElementById("textarea").innerHTML = content;
