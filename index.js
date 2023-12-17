@@ -118,16 +118,15 @@ const Character5 = new Character("Angry man", "5+5", "10");
 const Character6 = new Character("David Dawson", "6+6", "12");
 const Character7 = new Character("Crazy cat lady", "7+7", "14");
 
-console.log(Character1.name);
 const Hall = new Flat({
   name: "Hall",
   description:
-    "a long, narrow room with two entrance doors to Flats 1 and 2. Where should you go? Think like a cat. There is a backyard in Flat 1 with lots of squirrels. Cats love squirrels! But there is a very delicious food smell coming from Flat 2, but there are also lots of children screaming. Flat 1 - south, Flat 2 - east",
+    "a long, narrow room with two entrance doors to Flats 1 and 2. Where should you go? Think like a cat. There is a backyard in Flat 1 with lots of squirrels; cats love squirrels! However, there is also a very delicious smell of food coming from Flat 2, but there are also lots of children screaming. Flat 1 - south, Flat 2 - east.",
 });
 
 const Flat1 = new Flat({
   name: "Flat 1",
-  description: `a 2-bedroom flat with a backyard and a door to Flats 3 and 4. You checked the flat, and there is no sign of missing squirrels. That means there is no cat here. In order to change the flat, you need the ${Character1.name}'s permission. In order to get it, you have to answer a question.`,
+  description: `a 2-bedroom flat with a backyard and a door to Flats 3 and 4. After checking the flat, you find no sign of missing squirrels, indicating the absence of a cat. To change flats, you'll need ${Character1.name}'s permission, which you can obtain by answering a question.`,
   character: Character1,
   permission:
     "Well done! <br>You can come back to the Hall, or you can go to Flat 3 or Flat 4. What are you going to choose? You know that in Flat 3, there is a dog living, but the owner really likes cats and always gives Barney some treats. You also know that in Flat 4, a lovely woman once petted Barney when he was chilling on the bin.",
@@ -136,7 +135,7 @@ const Flat1 = new Flat({
 
 const Flat2 = new Flat({
   name: "Flat 2",
-  description: `a 3-bedroom flat with a backyard with no access to other flats. You looked around and haven't found a cat, but the ${Character2.name} told you that if you solve the riddle, they will tell you where they've seen him this morning.`,
+  description: `a 3-bedroom flat with a backyard and no access to other flats. You looked around and didn't find a cat, but ${Character2.name} told you that if you solve the riddle, they will reveal where they saw him this morning.`,
   character: Character2,
   permission:
     "Well done! <br>They saw Barney lying next to Flat 4 this morning.",
@@ -145,7 +144,7 @@ const Flat2 = new Flat({
 
 const Flat3 = new Flat({
   name: "Flat 3",
-  description: `a 1-bedroom flat. There is no cat or access to other flats. ${Character3.name} wasn't happy that you asked a question about a cat in front of his dog. So, in order to come back to Flat 1 and stay good neighbors with ${Character3.name}, you have to solve the riddle.`,
+  description: `a 1-bedroom flat. There is no cat or access to other flats. ${Character3.name} wasn't happy that you asked a question about a cat in front of his dog. To come back to Flat 1 and maintain good neighborly relations with ${Character3.name}, you have to solve the riddle.`,
   character: Character3,
   permission: "Well done!",
   guidance: "To return to the Flat 1, enter - north",
@@ -153,10 +152,10 @@ const Flat3 = new Flat({
 
 const Flat4 = new Flat({
   name: "Flat 4",
-  description: `a 2 bedroom flat with with excess to Flat 5 and FLat 6. No cat here. The ${Character4.name} who lives here is very happy to talk to you. In order to get an access to these Flats you have to answer her question.`,
+  description: `a 2-bedroom flat with access to Flat 5 and Flat 6. No cat here. ${Character4.name}, who lives here, is very happy to talk to you. To get access to these flats, you have to answer her question.`,
   character: Character4,
   permission:
-    "Well done! <br>Now, you can choose to go to Flat 5 or Flat 6. You are aware that a very angry man resides in Flat 5, while in Flat 6, a renowned actor from the 'My Policemen' movie lives. Where would you like to go?",
+    "Well done! <br>Now, you can choose to go to Flat 5 or Flat 6. You are aware that a very angry man resides in Flat 5, while in Flat 6, a famous actor from the 'Last Kingdom' movie lives. Where would you like to go?",
   guidance: "Flat 5 - south, Flat 6 - east",
 });
 const Flat5 = new Flat({
@@ -168,14 +167,14 @@ const Flat5 = new Flat({
 });
 const Flat6 = new Flat({
   name: "Flat 6",
-  description: `a 1 bedroom flat, with no cat and with access to Flat 7. ${Character6.name} told you that the cat might be in the Flat 7 but if you answer correctly to his question he will tell you the answer to the task in Flat 7.`,
+  description: `a 1-bedroom flat, with no cat and with access to Flat 7. ${Character6.name} told you that the cat might be in Flat 7, but if you answer his question correctly, he will tell you the solution to the task in Flat 7..`,
   character: Character6,
   permission: "Well done!",
   guidance: "Flat 7 - south",
 });
 const Flat7 = new Flat({
   name: "Flat 7",
-  description: `Finally you found a cat!!! Congrats! You have to solve the last task from ${Character7.name}, then she'll give you cat back`,
+  description: `Finally, you found a cat! Congrats! You have to solve the last task from ${Character7.name}, and then she'll give you the cat back.`,
   character: Character7,
   permission: "YOU WON!!!!",
   cat: true,
@@ -215,15 +214,16 @@ function displayFlatInfo(flat) {
       () => {
         usertext.style.display = "inline-block";
         document.getElementById("usertext").focus();
+
         let textPermission = `
       <p>${flat.permission}</p>`;
-        let textGuidance = `<p class="font-bold"">${flat.guidance}</p>`;
-
-        let content = textPermission + textGuidance;
-        document.getElementById("textarea").innerHTML = content;
+        let textGuidance = `<p class="font-bold">${flat.guidance}</p>`;
         if (flat.cat) {
           usertext.style.display = "none";
+          textGuidance = "";
         }
+        let content = textPermission + textGuidance;
+        document.getElementById("textarea").innerHTML = content;
       },
       () => {
         alert("The answer is wrong. Now you have to start from the beginning.");
